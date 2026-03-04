@@ -208,3 +208,49 @@ span.text-xs.font-semibold {
     z-index: 20;
     font-family: 'Roboto', sans-serif;
 }
+
+/* --- Keyframe para la animación de entrada de elementos --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Preparación de los elementos para la animación --- */
+/* Por defecto, los elementos dentro de una diapositiva están ocultos */
+.slide > h1,
+.slide > h2,
+.slide > p,
+.slide > ul > li,
+.slide > img {
+  opacity: 0;
+}
+
+/* Cuando la diapositiva está activa, se aplica la animación a sus hijos */
+.slide.active > h1,
+.slide.active > h2,
+.slide.active > p,
+.slide.active > ul > li,
+.slide.active > img {
+  /* 'forwards' mantiene el estado final de la animación (visible) */
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* --- Retrasos escalonados para la animación --- */
+.slide.active > h1,
+.slide.active > h2 {
+  animation-delay: 0.3s;
+}
+
+.slide.active > p { animation-delay: 0.5s; }
+.slide.active > ul > li:nth-child(1) { animation-delay: 0.6s; }
+.slide.active > ul > li:nth-child(2) { animation-delay: 0.7s; }
+.slide.active > ul > li:nth-child(3) { animation-delay: 0.8s; }
+.slide.active > ul > li:nth-child(4) { animation-delay: 0.9s; }
+
+.slide.active > img { animation-delay: 1.1s; }
