@@ -1,0 +1,92 @@
+<style>
+  body {
+    box-sizing: border-box;
+    background: radial-gradient(circle at top left, #0d0221, #050009 70%);
+    color: #ffffff;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  /* --- Estilo NEÓN para nodos --- */
+  .flow-node {
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 12px #0ff, 0 0 22px rgba(0,255,255,0.5);
+    transition: none !important;
+  }
+
+  /* Hover sin movimiento, solo brillo */
+  .flow-node:hover {
+    box-shadow: 0 0 18px #0ff, 0 0 28px rgba(0,255,255,0.8);
+    transform: none;
+  }
+
+  /* Texto de nodos */
+  .flow-node p,
+  .flow-node span {
+    color: #e0faff;
+  }
+
+  /* --- Conectores NEÓN --- */
+  .connector-vertical,
+  .connector-horizontal {
+    background-color: #0ff;
+    box-shadow: 0 0 10px #0ff, 0 0 25px rgba(0,255,255,0.6);
+  }
+
+  /* --- Flechas neon --- */
+  .arrow-down svg path {
+    stroke: #0ff !important;
+    filter: drop-shadow(0 0 6px cyan);
+  }
+
+  /* --- Diamond (rombo) --- */
+  .diamond {
+    border: 2px solid #ff00ea;
+    box-shadow: 0 0 12px #ff00ea, 0 0 22px rgba(255,0,255,0.6);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .diamond-content p {
+    color: #ffddff;
+  }
+
+  /* Etiquetas “Sí / No” */
+  span.text-xs.font-semibold {
+    color: #00eaff !important;
+    text-shadow: 0 0 6px #00eaff;
+  }
+
+  /* Contenedor del diagrama */
+  #diagram-container {
+    background: rgba(10, 10, 10, 0.4);
+    border: 1px solid #222;
+    box-shadow: inset 0 0 20px rgba(0,255,255,0.15);
+  }
+
+  /* Fondo decorativo suave behind */
+  #diagram-background {
+    background: radial-gradient(circle at top right, rgba(0,255,255,0.15), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(255,0,255,0.15), transparent 60%);
+  }
+
+  /* Títulos */
+  #titulo-principal {
+    color: #00f7ff !important;
+    text-shadow: 0 0 10px #0ff;
+  }
+
+  #subtitulo {
+    color: #d0d8ff !important;
+    text-shadow: 0 0 6px rgba(0,255,255,0.5);
+  }
+
+  /* Nota inferior */
+  #nota-habilidades-texto {
+    color: #9efaff !important;
+    text-shadow: 0 0 5px #0ff;
+  }
+</style>    
