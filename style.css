@@ -1,92 +1,161 @@
-<style>
-  body {
-    box-sizing: border-box;
-    background: radial-gradient(circle at top left, #0d0221, #050009 70%);
-    color: #ffffff;
-  }
+/* --- General Setup & Resets --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html, body {
-    height: 100%;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* --- Estilo NEÓN para nodos --- */
-  .flow-node {
-    background: rgba(0, 0, 0, 0.25);
-    color: #fff;
-    border: 2px solid #0ff;
-    box-shadow: 0 0 12px #0ff, 0 0 22px rgba(0,255,255,0.5);
-    transition: none !important;
-  }
+body {
+  background: radial-gradient(circle at top left, #0d0221, #050009 70%);
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
 
-  /* Hover sin movimiento, solo brillo */
-  .flow-node:hover {
-    box-shadow: 0 0 18px #0ff, 0 0 28px rgba(0,255,255,0.8);
-    transform: none;
-  }
+/* --- Layout Containers --- */
+.presentation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
 
-  /* Texto de nodos */
-  .flow-node p,
-  .flow-node span {
-    color: #e0faff;
-  }
+header, footer {
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
-  /* --- Conectores NEÓN --- */
-  .connector-vertical,
-  .connector-horizontal {
-    background-color: #0ff;
-    box-shadow: 0 0 10px #0ff, 0 0 25px rgba(0,255,255,0.6);
-  }
+footer {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 
-  /* --- Flechas neon --- */
-  .arrow-down svg path {
-    stroke: #0ff !important;
-    filter: drop-shadow(0 0 6px cyan);
-  }
+section {
+    margin-bottom: 4rem;
+}
 
-  /* --- Diamond (rombo) --- */
-  .diamond {
-    border: 2px solid #ff00ea;
-    box-shadow: 0 0 12px #ff00ea, 0 0 22px rgba(255,0,255,0.6);
-    background: rgba(0, 0, 0, 0.3);
-  }
+/* --- Typography --- */
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
 
-  .diamond-content p {
-    color: #ffddff;
-  }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.25rem; color: #00f7ff; }
+h3 { font-size: 1.5rem; color: #e0faff; }
+p { line-height: 1.6; }
+ul { margin-left: 1.5rem; margin-top: 1rem; }
+li { margin-bottom: 0.5rem; }
 
-  /* Etiquetas “Sí / No” */
-  span.text-xs.font-semibold {
-    color: #00eaff !important;
-    text-shadow: 0 0 6px #00eaff;
-  }
-
-  /* Contenedor del diagrama */
-  #diagram-container {
-    background: rgba(10, 10, 10, 0.4);
-    border: 1px solid #222;
-    box-shadow: inset 0 0 20px rgba(0,255,255,0.15);
-  }
-
-  /* Fondo decorativo suave behind */
-  #diagram-background {
-    background: radial-gradient(circle at top right, rgba(0,255,255,0.15), transparent 60%),
-                radial-gradient(circle at bottom left, rgba(255,0,255,0.15), transparent 60%);
-  }
-
-  /* Títulos */
-  #titulo-principal {
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
     color: #00f7ff !important;
     text-shadow: 0 0 10px #0ff;
-  }
+}
 
-  #subtitulo {
-    color: #d0d8ff !important;
-    text-shadow: 0 0 6px rgba(0,255,255,0.5);
-  }
+/* --- Estilo NEÓN para nodos (Content Cards) --- */
+.flow-node {
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 12px #0ff, 0 0 22px rgba(0,255,255,0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: 100%; /* For grid layout alignment */
+}
 
-  /* Nota inferior */
-  #nota-habilidades-texto {
-    color: #9efaff !important;
-    text-shadow: 0 0 5px #0ff;
-  }
-</style>    
+.flow-node:hover {
+  box-shadow: 0 0 18px #0ff, 0 0 35px rgba(0,255,255,0.8);
+  transform: translateY(-5px); /* Subtle lift effect */
+}
+
+.flow-node p,
+.flow-node span,
+.flow-node li {
+  color: #e0faff;
+}
+
+/* --- Steps Grid Layout --- */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Conectores (Unused in this layout) --- */
+.connector-vertical,
+.connector-horizontal {
+  background-color: #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 25px rgba(0,255,255,0.6);
+}
+
+/* --- Flechas (Unused) --- */
+.arrow-down svg path {
+  stroke: #0ff !important;
+  filter: drop-shadow(0 0 6px cyan);
+}
+
+/* --- Diamond (Unused) --- */
+.diamond {
+  border: 2px solid #ff00ea;
+  box-shadow: 0 0 12px #ff00ea, 0 0 22px rgba(255,0,255,0.6);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.diamond-content p {
+  color: #ffddff;
+}
+
+/* --- Etiquetas (Unused) --- */
+span.text-xs.font-semibold {
+  color: #00eaff !important;
+  text-shadow: 0 0 6px #00eaff;
+}
+
+/* --- Contenedor del diagrama (Repurposed as background) --- */
+#diagram-container {
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid #222;
+  box-shadow: inset 0 0 20px rgba(0,255,255,0.15);
+}
+
+/* --- Fondo decorativo --- */
+#diagram-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(circle at top right, rgba(0,255,255,0.1), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(255,0,255,0.1), transparent 50%);
+  pointer-events: none; /* Allows clicking through */
+}
+
+/* --- Títulos específicos --- */
+#titulo-principal {
+  color: #00f7ff !important;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+#subtitulo {
+  color: #d0d8ff !important;
+  text-shadow: 0 0 6px rgba(0,255,255,0.5);
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Nota inferior --- */
+#nota-habilidades-texto {
+  color: #9efaff !important;
+  text-shadow: 0 0 5px #0ff;
+  font-style: italic;
+}
