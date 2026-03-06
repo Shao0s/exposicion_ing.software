@@ -45,10 +45,10 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.25rem; color: #00f7ff; }
-h3 { font-size: 1.5rem; color: #e0faff; }
-p { line-height: 1.6; }
+h1 { font-size: 5rem; }
+h2 { font-size: 3.5rem; color: #00f7ff; }
+h3 { font-size: 2.2rem; color: #e0faff; }
+p { font-size: 1.6rem; line-height: 1.6; }
 
 /* --- Estilos de Lista Personalizados --- */
 ul {
@@ -59,9 +59,10 @@ ul {
 
 li {
     position: relative;
-    padding-left: 1.75rem; /* Creamos espacio para la viñeta personalizada */
-    margin-bottom: 0.75rem; /* Espacio entre elementos */
-    line-height: 1.5;
+    padding-left: 2.5rem; /* Más espacio para la viñeta */
+    margin-bottom: 1rem; /* Más separación entre items */
+    line-height: 1.4;
+    font-size: 1.6rem; /* Letra más grande */
 }
 
 li::before {
@@ -70,8 +71,9 @@ li::before {
     left: 0;
     color: #00f7ff; /* Color neón */
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 2rem; /* Viñeta más grande */
     text-shadow: 0 0 6px #00f7ff; /* Efecto de brillo */
+    top: -0.2rem; /* Ajuste de alineación */
 }
 
 .section-title {
@@ -210,7 +212,7 @@ span.text-xs.font-semibold {
 
 .slide img {
     max-width: 50%;
-    max-height: 40vh;
+    max-height: 30vh; /* Reducimos un poco la imagen para dar espacio al texto */
     object-fit: cover;
     margin-top: 2rem;
     border-radius: 10px;
