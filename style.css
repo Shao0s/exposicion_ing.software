@@ -49,8 +49,30 @@ h1 { font-size: 3.5rem; }
 h2 { font-size: 2.25rem; color: #00f7ff; }
 h3 { font-size: 1.5rem; color: #e0faff; }
 p { line-height: 1.6; }
-ul { margin-left: 1.5rem; margin-top: 1rem; }
-li { margin-bottom: 0.5rem; }
+
+/* --- Estilos de Lista Personalizados --- */
+ul {
+    list-style: none; /* Quitamos las viñetas por defecto */
+    padding-left: 1rem; /* Indentamos la lista completa */
+    margin-top: 1rem;
+}
+
+li {
+    position: relative;
+    padding-left: 1.75rem; /* Creamos espacio para la viñeta personalizada */
+    margin-bottom: 0.75rem; /* Espacio entre elementos */
+    line-height: 1.5;
+}
+
+li::before {
+    content: '»'; /* Nuestro nuevo ícono de viñeta */
+    position: absolute;
+    left: 0;
+    color: #00f7ff; /* Color neón */
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-shadow: 0 0 6px #00f7ff; /* Efecto de brillo */
+}
 
 .section-title {
     text-align: center;
