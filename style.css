@@ -45,12 +45,41 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.25rem; color: #00f7ff; }
-h3 { font-size: 1.5rem; color: #e0faff; }
-p { line-height: 1.6; }
-ul { margin-left: 1.5rem; margin-top: 1rem; }
-li { margin-bottom: 0.5rem; }
+h1 { font-size: 5rem; }
+h2 { font-size: 3.5rem; color: #00f7ff; }
+h3 { font-size: 2.2rem; color: #e0faff; }
+p { font-size: 1.6rem; line-height: 1.6; }
+
+/* --- Estilos de Lista Personalizados --- */
+ul {
+    list-style: none; /* Quitamos las viñetas por defecto */
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+/* Estilo base para todos los items de lista */
+li {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+/* Viñeta personalizada solo para listas no ordenadas (ul) */
+ul > li {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+ul > li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    color: #00f7ff;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0 0 6px #00f7ff;
+    top: -0.2rem;
+}
 
 .section-title {
     text-align: center;
@@ -188,7 +217,7 @@ span.text-xs.font-semibold {
 
 .slide img {
     max-width: 50%;
-    max-height: 40vh;
+    max-height: 30vh; /* Reducimos para dar más espacio al texto */
     object-fit: cover;
     margin-top: 2rem;
     border-radius: 10px;
@@ -235,6 +264,44 @@ span.text-xs.font-semibold {
 
 .activity-column ol {
     margin-left: 1.5rem;
+}
+
+/* --- Timer Styles --- */
+.timer-container {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #00f7ff;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+#timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 10px;
+}
+
+.timer-controls button {
+    background: transparent;
+    border: 1px solid #00f7ff;
+    color: #00f7ff;
+    padding: 5px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.timer-controls button:hover {
+    background: #00f7ff;
+    color: #000;
+    box-shadow: 0 0 10px #00f7ff;
 }
 
 .sync-step {
@@ -321,8 +388,7 @@ span.text-xs.font-semibold {
 }
 
 .steps-list li {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
+    /* El tamaño de fuente y margen se hereda del 'li' base */
     padding-left: 5px;
 }
 
